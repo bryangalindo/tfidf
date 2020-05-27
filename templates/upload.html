@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+   <div class="container">
+      <form action = "http://localhost:5000/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+   </div>
+   <div class="container">
+      <p>My string: {{my_string}}</p>
+      <p>Value from the list: {{my_list[1]["words"]["the"]}}</p>
+      <p>Loop through the list:</p>
+      <ul>
+        {% for n in my_list %}
+            {% for key, value in n["words"].items() %}
+              <li>{{ key }} {{ value }}</li>
+            {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+
+{% endblock %}
