@@ -14,6 +14,7 @@
       <p>Loop through the list:</p>
       <ul>
         {% for n in my_list %}
+         <h2>{{ n["document_name"] }}</h2>
             {% for key, value in n["words"].items() %}
               <li>{{ key }} {{ value }}</li>
             {% endfor %}
