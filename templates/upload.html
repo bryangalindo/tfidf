@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-   <div class="container">
-      <form action = "/uploader" method = "POST"
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" />
-         <input type = "submit"/>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h2>Upload Text Documents</h2>
+
+      <form action="/uploader" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="text" id="text">
+            <label class="custom-file-label" for="image"></label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+
       </form>
-   </div>
-   <div class="container">
-      <ul>
-        {% for n in my_list %}
-         <h2>{{ n["document_name"] }}</h2>
-            {% for key, value in n["words"].items() %}
-              <li>{{ key }} {{ value }}</li>
-            {% endfor %}
-        {% endfor %}
-      </ul>
+
     </div>
+  </div>
+</div>
 
 {% endblock %}
