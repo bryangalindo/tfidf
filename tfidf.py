@@ -53,9 +53,6 @@ def calculate_all_term_frequencies():
             tfidf_master_list[i]['words'][k]['term_frequency'] = term_frequency
 
 
-calculate_all_term_frequencies()
-
-
 def get_document_occurrences_count(word, current_doc_index):
     document_occurences_count = 1
     word = word.replace('\ufeff', '')
@@ -87,6 +84,3 @@ def create_tfidf_list():
     calculate_all_term_frequencies()
     calculate_inverse_document_frequency()
     return tfidf_master_list
-
-create_tfidf_list()
-print('g')
